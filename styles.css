@@ -1,0 +1,302 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.sidebar {
+    position: fixed;
+    width: 200px;
+    height: 100vh;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    z-index: 1000;
+    transition: background-color 0.5s ease;
+}
+
+.sidebar a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, font-weight 0.3s ease, color 0.5s ease;
+}
+
+.sidebar a.active {
+    font-weight: bold;
+    transform: scale(1.2);
+}
+
+main {
+    margin-left: 200px;
+    width: calc(100% - 200px);
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    transition: background-color 0.5s ease;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+h1, h2 {
+    margin: 0;
+    font-weight: normal;
+
+}
+
+h1 {
+    font-size: 16px;
+    padding-left: 90px;
+    font-family: "ISOCTEUR",sans-serif;
+}
+
+h2 {
+    font-size: 16px;
+    padding-right: 100px;
+    font-family: "ISOCTEUR",sans-serif;
+}
+
+.media-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 20px; /* Adds space between the elements */
+
+}
+
+.side-video {
+    width: 300px;
+    height: 500px;
+    overflow: hidden;
+
+}
+.side-video_01 {
+    width: 400px;
+    height: 500px;
+    object-fit: cover; /* Ensures the video covers the container */
+    display: block;
+    cursor: pointer;
+
+}
+
+.side-video video {
+    width: 300px;
+    height: 500px;
+    object-fit: cover; /* Ensures the video covers the container */
+    display: block;
+    cursor: pointer;
+
+}
+
+.center-image {
+    width: 400px; /* Increased to make it more prominent */
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.center-image img {
+    width: 400px;
+    height: 500px;
+    object-fit: contain; /* Ensures the image fits within the container */
+    display: block;
+
+}
+
+.description {
+    width: 80%;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.description p {
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: "POPPINS";
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+footer p {
+    font-size: 12px;
+}
+
+#model-view {
+    background-color: #333333;
+    color: white;
+}
+
+#model-view .model-container {
+    width: 100%;
+    height: 70vh;
+    margin-bottom: 30px;
+    display: flex;
+}
+
+#model-view model-viewer {
+    width: 600px;
+    height: 600px;
+    background-color: #444444;
+    
+}
+.AIdescription {
+    width: 401px;
+    height: 186px;
+    top: 160px;
+    left: 19px;
+    text-align: justify;
+    margin-bottom: 40px;
+    padding-left: 150px;
+    padding-top: 200px;
+    font-family: "POPPINS";
+    font-size: 12px;    
+}
+
+
+
+#ai-gen {
+    background-color: #ffffff;
+}
+
+#ai-gen .ai-gen-content {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#ai-gen .image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 60%;
+    padding-right:40px ;
+}
+
+#ai-gen .image-grid .image-slider .slider-wrapper img {
+    width: 120px;
+    height: 120px;
+    /* object-fit: cover; */
+    border-radius: 5px;
+    padding-left: 20px;    
+}
+
+#ai-gen .text-content {
+    
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+}
+
+#ai-gen h {
+    font-size: 3.5em;
+    margin-bottom: 30px;
+    margin-top: 5px;
+    color: #333;
+    width: 100px;
+    
+}
+
+#ai-gen p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+    font-family: "POPPINS";
+    font-size: 12px;
+    width: 250px;
+}
+
+@media (max-width: 1024px) {
+    .sidebar {
+        left: 20px;
+    }
+
+    main {
+        margin-left: 170px;
+        width: calc(100% - 170px);
+    }
+
+    #ai-gen .ai-gen-content {
+        flex-direction: column;
+    }
+
+    #ai-gen .image-grid,
+    #ai-gen .text-content {
+        width: 100%;
+    }
+
+    #ai-gen .text-content {
+        padding-left: 0;
+        padding-top: 20px;
+    }
+}
+/* Add this if you want to ensure the content doesn't stretch too wide on large screens */
+@media (min-width: 1200px) {
+    .media-container {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right:auto;
+}
+}
+
+/* Slider container */
+.image-slider {
+    width: 140px;
+    overflow: hidden; /* Hide overflowing content */
+    height: 120px; /* Adjust height based on your image size */
+    position: relative;
+}
+
+.slider-wrapper {
+    display: flex;
+    width: 100%; /* 5 is the number of images; adjust based on the number of images */
+    animation: slide 5s infinite; /* Duration of the full slide animation */  
+}
+
+
+/* Sliding animation */
+@keyframes slide {
+    0% { transform: translateX(0); }      /* First image */
+    20% { transform: translateX(0); }     /* Pause at the first image */
+    25% { transform: translateX(-100%); } /* Slide to the second image */
+    45% { transform: translateX(-100%); } /* Pause at the second image */
+    50% { transform: translateX(-200%); } /* Slide to the third image */
+    70% { transform: translateX(-200%); } /* Pause at the third image */
+    75% { transform: translateX(-300%); } /* Slide to the fourth image */
+    95% { transform: translateX(-300%); } /* Pause at the fourth image */
+    100% { transform: translateX(-400%); } /* Slide to the fifth image */
+}

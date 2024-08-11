@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Model View</title>
+    <!-- Import the component -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #fff;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 200vh;
+            padding: 10px;
+        }
+
+        .colmodel {
+            flex: 3;
+            height: 300px;
+        }
+
+        .description {
+            flex: 1;
+            padding: 0 20px;
+            text-align: justify;
+        }
+
+        h1 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <model-viewer class="colmodel" src="assets/01_Col.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
+            poster="poster.webp" shadow-intensity="1" environment-image="legacy" exposure="0.56">
+        </model-viewer>
+
+        <div class="description">
+            <h1>Temporal Architecture</h1>
+            <p>This project explores Temporal Architecture by combining ceramics and biodegradable sawdust to create dynamic, evolving architecture. Here I took columns as an example, using advanced generative design scripts and robotic printing. The resulting panels are filled with sawdust, which degrades over time, allowing for periodic redesign and renewal. This approach emphasizes sustainability and innovative fabrication techniques in modern architectural design.</p>
+        </div>
+    </div>
+</body>
+
+</html>
